@@ -1,0 +1,21 @@
+{
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "reactSnippets.settings.prettierEnabled": true,
+    "prettier.bracketSameLine": true,
+    "prettier.enableDebugLogs": true,
+    "prettier.experimentalTernaries": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.insertPragma": true,
+    "prettier.requireConfig": true,
+    "prettier.requirePragma": true,
+    "prettier.resolveGlobalModules": true,
+    "prettier.singleAttributePerLine": true,
+    "prettier.singleQuote": true,
+    "prettier.useTabs": true,
+    "prettier.vueIndentScriptAndStyle": true,
+    "prettier.withNodeModules": true,
+    "vs-code-prettier-eslint.prettierLast": true,
+    "rust-analyzer.interpret.tests": true,
+    "prettier.prettierPath": "./node_modules/prettier",
+    "compile-hero.disable-compile-files-on-did-save-code": false
+}
