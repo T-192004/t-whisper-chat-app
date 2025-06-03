@@ -12,7 +12,7 @@ import ScrollableChat from './ScrollableChat';
 // import socket from './socket';  // Not used here, socket.io-client is used instead
 import io from 'socket.io-client';
 
-const ENDPOINT = "http://localhost:5000";  // Backend server URL
+const ENDPOINT = process.env.REACT_APP_BACKEND_URL;  // Backend server URL
 var socket, selectedChatCompare;  // Socket instance and chat reference for comparison
 
 const SingleChat = ({ setFetchAgain, fetchAgain }) => {
