@@ -1,0 +1,22 @@
+/* Reset default margin for the body to remove browser spacing */
+body {
+  margin: 0;
+
+  /* Set a system-friendly sans-serif font stack for better compatibility and readability */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+
+  /* Improve font rendering on WebKit-based browsers (e.g., Chrome, Safari) */
+  -webkit-font-smoothing: antialiased;
+
+  /* Improve font rendering on Firefox (macOS) */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Style for inline code elements */
+code {
+  /* Use a monospaced font stack for code readability */
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

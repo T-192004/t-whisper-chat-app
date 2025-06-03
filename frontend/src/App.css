@@ -1,0 +1,30 @@
+/* Import the "Work Sans" font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Main app container styling */
+.App {
+  min-height: 100vh; /* Ensure the container takes full viewport height */
+  display: flex; /* Use flex layout for alignment of child components */
+
+  /* Set a background image */
+  background-image: url('./background.png');
+  background-size: cover; /* Scale background to cover entire container */
+  background-position: center; /* Center the background image */
+
+  color: black; /* Default text color */
+}
+
+/* Hide the scrollbar completely in WebKit-based browsers (Chrome, Safari, etc.) */
+::-webkit-scrollbar {
+  width: 0px; /* Makes the scrollbar invisible */
+}
+
+/* Style the scrollbar thumb (even though it's hidden in most cases) */
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.281); /* Light grey thumb with transparency */
+}
+
+/* Darken the thumb when hovered (if scrollbar becomes visible by design) */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Dark grey on hover */
+}

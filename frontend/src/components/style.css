@@ -1,0 +1,11 @@
+.messages {
+  /* Use flexbox to stack messages vertically */
+  display: flex;
+  flex-direction: column;
+
+  /* Enable vertical scrolling if content overflows */
+  overflow-y: scroll;
+
+  /* Hide scrollbar in Firefox */
+  scrollbar-width: none;
+}
