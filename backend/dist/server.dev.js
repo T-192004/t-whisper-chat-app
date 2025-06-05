@@ -2,7 +2,9 @@
 
 var express = require('express');
 
-var dotenv = require('dotenv'); // const chats = require('./data/data')
+var dotenv = require('dotenv');
+
+var cors = require("cors"); // const chats = require('./data/data')
 
 
 var _require = require('./config/db'),
