@@ -22,6 +22,7 @@ var _require2 = require('./middleware/errorMiddleware'),
 
 dotenv.config();
 var app = express();
+app.use(cors());
 db.once('open', function () {
   console.log('MongoDB connected to Chat-app database');
 });

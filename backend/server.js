@@ -10,6 +10,7 @@ const mesaageRoutes = require('./routes/messageRoutes');
 const {notFound, errorHandler} = require('./middleware/errorMiddleware');
 dotenv.config();
 const app = express();
+app.use(cors());
 
 db.once('open', () => {
   console.log('MongoDB connected to Chat-app database');

@@ -30,6 +30,8 @@ function Login() {
                             "Content-type": "application/json",
                         },
                     };
+                    console.log("Backend URL:", process.env.REACT_APP_BACKEND_URL);
+
                     const {data} = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/user/login`,
                             {email, password},
                             config
