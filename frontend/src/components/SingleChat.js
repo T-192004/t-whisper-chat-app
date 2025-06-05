@@ -46,7 +46,7 @@ const SingleChat = ({ setFetchAgain, fetchAgain }) => {
                 setNewMessage("");  // Clear input box
                 
                 // Post message to backend API
-                const { data } = await axios.post('/api/message', {
+                const { data } = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/message`, {
                     content: newMessage,
                     chatId: selectedChat._id,
                 }, config);
@@ -81,7 +81,7 @@ const SingleChat = ({ setFetchAgain, fetchAgain }) => {
             };
             seTLoading(true);  // Start loading spinner
 
-            const { data } = await axios.get(`/api/message/${selectedChat._id}`, config);
+            const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/message/${selectedChat._id}`, config);
             setMessages(data);  // Store fetched messages
             seTLoading(false);  // Stop loading spinner
 

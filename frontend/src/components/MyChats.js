@@ -29,7 +29,7 @@ const MyChats = ({ fetchAgain }) => {
       };
 
       // Make GET request to fetch all chats of the logged user
-      const { data } = await axios.get('/api/chat', config);
+      const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/chat`, config);
 
       // Log data for debugging (can be removed in production)
       console.log(data);

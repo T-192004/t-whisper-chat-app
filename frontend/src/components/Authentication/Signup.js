@@ -99,7 +99,7 @@ function Signup() {
                     "Content-type": "application/json",
                 },
             };
-            const {data} = await axios.post('/api/user/register',
+            const {data} = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/user/register`,
                     {name, email, password, pic},
                     config
             );

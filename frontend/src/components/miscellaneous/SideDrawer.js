@@ -47,7 +47,7 @@ const navigate = useNavigate();
       },
 
     };
-    const {data} = await axios.get(`/api/user/allUsers?search=${search}`, config);
+    const {data} = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/user/allUsers?search=${search}`, config);
     // console.log(data);
     
     setLoading(false);
@@ -76,7 +76,7 @@ const navigate = useNavigate();
       },
     };
 
-    const {data} = await axios.post('/api/chat', {userId}, config);
+    const {data} = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/chat`, {userId}, config);
     if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);
       setLoadingChat(false);
