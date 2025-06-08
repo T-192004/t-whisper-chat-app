@@ -150,11 +150,6 @@ Click "Get Guest User Credentials" on login page to auto-fill:
     Password: 123456
 
 
-## 📸 Screenshots
-<details> <summary>Login / Signup</summary> - Email/Password auth - Guest credentials </details> <details> <summary>Chat Dashboard</summary> - Side drawer, notifications, real-time search </details> <details> <summary>Group Management</summary> - Add/remove users, rename group </details>
-
-
-
 ## ✨ Author
 Tanvi Tomar
 📧 B.Tech | Full Stack | Data Science

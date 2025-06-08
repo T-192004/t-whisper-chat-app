@@ -4,6 +4,47 @@ T-Whispers is a fully-functional **real-time chat app** with support for **user 
 
 ---
 
+## Demo Video - 
+
+
+[Click here to watch the demo](./t-whisper-real-time-chat-app-demo.mkv)
+
+---
+
+
+## Preview - 
+
+### Login Page
+    ![App Preview](./demo-images/login.png) 
+
+### Signup Page
+    ![App Preview](./demo-images/signup.png) 
+
+### User Profile Page
+    ![App Preview](./demo-images/user-profile.png) 
+
+
+### Search User Page
+    ![App Preview](./demo-images/search-user.png) 
+
+
+### Private Chat Page
+    ![App Preview](./demo-images/private-message.png) 
+
+### PRivate Chat Sender Profile Page
+    ![App Preview](./demo-images/sender-user-profile.png) 
+
+
+### Group Chat Page
+    ![App Preview](./demo-images/group-msging.png)
+
+### Group Chat Profile Page
+    ![App Preview](./demo-images/grp-chat-profile.png)
+
+### Group Chat Profile Page
+    ![App Preview](./demo-images/create-new-group.png)
+---
+
 ## 📦 Tech Stack
 
 | Layer     | Technology                          |
@@ -135,8 +176,6 @@ T-Whispers is a fully-functional **real-time chat app** with support for **user 
     🌐 Backend API: https://t-whisper-chat-app.onrender.com
 
 
-## 📸 Screenshots
-<details> <summary>🟢 Login & Signup</summary> - Email/password authentication - Guest login button </details> <details> <summary>🟣 Chat Dashboard</summary> - Side drawer with search - Realtime updates & typing indicator </details> <details> <summary>🟡 Group Management</summary> - Admin can add/remove users - Rename group, leave room </details>
 
 
 ## 🧪 Test Credentials
