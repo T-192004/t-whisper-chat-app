@@ -68,7 +68,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       };
 
       // API call to remove user from group
-      const { data } = await axios.put('/api/chat/groupremove', {
+      const { data } = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/chat/groupremove`, {
         chatId: selectedChat._id,
         userId: user1._id
       }, config);
@@ -110,7 +110,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       };
 
       // API call to rename the group chat
-      const { data } = await axios.put('/api/chat/rename', {
+      const { data } = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/chat/rename`, {
         chatId: selectedChat._id,
         chatName: groupChatName
       }, config);
@@ -151,7 +151,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       };
 
       // API call to search users by query
-      const { data } = await axios.get(`/api/user/allUsers?search=${query}`, config);
+      const { data } = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/user/allUsers?search=${query}`, config);
 
       console.log("Search data: ", data);
 
@@ -203,7 +203,7 @@ const UpdateGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
       };
 
       // API call to add user to group
-      const { data } = await axios.put('/api/chat/groupAdd', {
+      const { data } = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/chat/groupAdd`, {
         chatId: selectedChat._id,
         userId: user1._id
       }, config);

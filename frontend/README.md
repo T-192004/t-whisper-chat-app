@@ -1,70 +1,166 @@
-# Getting Started with Create React App
+# 💬 T-Whispers – Real-Time Chat App (Frontend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**T-Whispers** is a responsive, real-time chat application built using **React.js** and **Chakra UI**, with support for **user authentication**, **1-on-1 and group chats**, **Socket.IO real-time messaging**, and modern UI/UX enhancements. It interacts with a Node.js + MongoDB backend for chat and user data, and uses Socket.IO for real-time message updates.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🧩 Features
 
-### `npm start`
+- 🔐 JWT-based user login, signup, and logout
+- 👤 Profile picture upload using Cloudinary
+- 💬 Create and manage **group chats**
+- 🔍 Real-time **search** for users to start a chat
+- 🧭 Sidebar with **notifications** and profile access
+- ✉️ Real-time messages with typing indicators and scrollable chat
+- 🧑‍🤝‍🧑 Add or remove users from group chats (Admin only)
+- 📱 Mobile responsive with conditional rendering
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+| Category      | Tech                       |
+|---------------|----------------------------|
+| Frontend      | React.js (with Hooks)      |
+| UI Framework  | Chakra UI                  |
+| HTTP Client   | Axios                      |
+| Real-time     | Socket.IO Client           |
+| State Sharing | React Context API          |
+| Forms         | React Hook Form (custom)   |
+| Avatar Hosting | Cloudinary                |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    src/
+    │
+    ├── App.js # Routing Setup
+    ├── App.css # Global Styling
+    ├── index.js # Entry Point
+    │
+    ├── Pages/
+    │ ├── HomePage.js # Login/Signup UI
+    │ └── ChatPage.js # Main Chat Dashboard
+    │
+    ├── Context/
+    │ └── ChatProvider.js # Global State Provider (user, chats, etc.)
+    │
+    ├── components/
+    │ ├── Authentication/
+    │ │ ├── Login.js
+    │ │ └── Signup.js
+    │ │
+    │ ├── misc/
+    │ │ ├── SideDrawer.js # Top navigation drawer with search + profile
+    │ │ ├── ProfileModal.js # User profile display in modal
+    │ │ └── UpdateGroupChatModal.js # Group chat edit modal
+    │ │
+    │ ├── ChatBox.js # Right pane chat view
+    │ ├── MyChats.js # Left pane chat list
+    │ ├── SingleChat.js # Chat UI with scroll and socket logic
+    │ ├── ScrollableChat.js # Chat bubbles and avatars
+    │ ├── GroupChatModal.js # Modal to create new group chat
+    │ ├── ChatLoading.js # Skeleton loading state
+    │ └── UserAvatar/
+    │ ├── UserBadgeItem.js # Badge for users in group chat
+    │ └── UserListItem.js # UI for user list during search
+    │
+    ├── config/
+    │ └── ChatLogic.js # Utility functions: getSender, isSameUser etc.
+    │
+    └── .env # API Endpoint configuration
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🌍 Environment Variables
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Create a `.env` file in your root directory:
 
-## Learn More
+    REACT_APP_BACKEND_URL=https://your-backend-api.onrender.com
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚀 Getting Started
+### 1. Clone the Repository
 
-### Code Splitting
+    git clone https://github.com/T-192004/t-whisper-chat-app
+    cd t-whispers-chat-frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### 2. Install Dependencies - 
+    npm install
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 3. Start the Application - 
+    npm start
 
-### Making a Progressive Web App
+This will launch the app at http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🔐 Authentication Flow
 
-### Deployment
+- Registration and Login use /api/user/register and /api/user/login.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- On success, user data and token are stored in localStorage under the key: `userInfoChatApp`
 
-### `npm run build` fails to minify
+- Protected routes like /chats are only accessible if the token exists.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## 📡 Real-Time Messaging
+Socket.IO events handled:
+
+| Event              | Purpose                                                |
+| ------------------ | ------------------------------------------------------ |
+| `set-up`           | Authenticate and join user room                        |
+| `join-chat`        | Join a specific chat room                              |
+| `typing`           | Notify others when a user is typing                    |
+| `stop-typing`      | Typing ends                                            |
+| `new-message`      | Emit newly sent message                                |
+| `message-recieved` | Listen for messages in active chat or as notifications |
+
+
+## 👨‍👩‍👧‍👦 Group Chat Features
+
+- Create new group chats with multiple users
+
+- Rename group chat title
+
+- Add or remove users (admin-only permission)
+
+- Leave group chat
+
+
+## 📤 Profile Upload with Cloudinary
+
+- Used in the Signup component
+
+- Supports jpeg and png images
+
+- Uses the fetch API with Cloudinary preset & cloud name
+
+
+## ✅ Guest Credentials
+Click "Get Guest User Credentials" on login page to auto-fill:
+    Email: guest@example.com
+    Password: 123456
+
+
+## 📸 Screenshots
+<details> <summary>Login / Signup</summary> - Email/Password auth - Guest credentials </details> <details> <summary>Chat Dashboard</summary> - Side drawer, notifications, real-time search </details> <details> <summary>Group Management</summary> - Add/remove users, rename group </details>
+
+
+
+## ✨ Author
+Tanvi Tomar
+📧 B.Tech | Full Stack | Data Science
+🔗 LinkedIn
+🔗 GitHub -  https://github.com/T-192004
+
+
+📝 License
+This project is open-source and available under the MIT License.
